@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  context-path: /my.zuul
+spring:
+  application:
+    name: my.zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.169.128:8080/my.demo/eureka/
+      instance: 
+        prefer-ip-address: true
+        metadata-map:
+          configPath:${server.servlet.context-path:}
+          management.context-path:${server.servlet.context-path:}   
+zuul:
+  routes:
+    order-api:
+      path: /order-api/**
+      service-id: my.order
+      #strip-prefix: false
+    web-api:
+      path: /api/**
+      service-id: web
+logging:
+  level:
+    com.netflix: debug    
+  
+        
+#ribbon:  
+  #ConnectTimeout: 10000
+  #ReadTimeout: 6000
