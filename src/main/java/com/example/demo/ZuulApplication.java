@@ -16,7 +16,6 @@ import com.common.filter.AccessFilter;
 public class ZuulApplication {
 
 	public static void main(String[] args) {
-		System.out.prinln("a");
 		SpringApplication.run(ZuulApplication.class, args);
 	}
 	
