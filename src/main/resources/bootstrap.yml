@@ -18,7 +18,7 @@ zuul:
     order-api:
       path: /order-api/**
       service-id: my.order
-      #strip-prefix: false
+      strip-prefix: false
     web-api:
       path: /api/**
       service-id: web
